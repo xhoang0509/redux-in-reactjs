@@ -1,10 +1,24 @@
 ul.hobby-list {
-    li {
-        font-size: 28px;
-        cursor: pointer;
-    }
     li.active {
         color: deeppink;
-        transition: all 0.25s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+    }
+    li {
+        cursor: pointer;
+        font-size: 28px;
+    }
+
+    .btn {
+        border-radius: 4px;
+        margin: 0 4px;
+        cursor: pointer;
+    }
+
+    .btn-edit {
+        background-color: yellow;
+    }
+
+    .btn-delete {
+        background-color: red;
     }
 }

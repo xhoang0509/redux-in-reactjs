@@ -1,7 +1,12 @@
 const userReducer = (state = {}, action) => {
     switch (action.type) {
-        default:
+        case 'ADD_USER': {
             return state;
+        }
+
+        default: {
+            return state;
+        }
     }
 };
 

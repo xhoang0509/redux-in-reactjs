@@ -1,14 +1,12 @@
-const inititalState = JSON.parse(localStorage.getItem('hobby_list')) || {
+const initialState = JSON.parse(localStorage.getItem('hobby_list')) || {
     list: [],
     activeId: null,
 };
 
-const hobbyReducer = (state = inititalState, action) => {
+const hobbyReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_HOBBY': {
-            const newList = [...state.list];
-            newList.push(action.payload);
-
+            const newList = [...state.list, action.payload];
             return {
                 ...state,
                 list: newList,
@@ -23,8 +21,20 @@ const hobbyReducer = (state = inititalState, action) => {
             };
         }
 
-        default:
+        case 'DELETE_HOBBY': {
+            const list = [...state.list];
+            const newList = list.filter(
+                (item) => item.id !== action.payload.id
+            );
+            return {
+                ...state,
+                list: newList,
+            };
+        }
+
+        default: {
             return state;
+        }
     }
 };
 
