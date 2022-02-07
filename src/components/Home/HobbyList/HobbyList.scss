@@ -1,0 +1,10 @@
+ul.hobby-list {
+    li {
+        font-size: 28px;
+        cursor: pointer;
+    }
+    li.active {
+        color: deeppink;
+        transition: all 0.25s ease-in-out 0s;
+    }
+}
